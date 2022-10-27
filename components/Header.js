@@ -6,19 +6,23 @@ function Header() {
     <StyledHeader>
       <h1>Recipes</h1>
       <StyledNav>
-        <Link href="/" passHref legacyBehavior>
-          <StyledAnchor>home</StyledAnchor>
-        </Link>
-        <Link href="/veggie" passHref legacyBehavior>
-          <StyledAnchor>veggie</StyledAnchor>
-        </Link>
-        <Link href="/dessert" passHref legacyBehavior>
-          <StyledAnchor>dessert</StyledAnchor>
-        </Link>
+        <StyledLink href="/">home</StyledLink>
+        <StyledLink href="/veggie">veggie</StyledLink>
+        <StyledLink href="/dessert">dessert</StyledLink>
       </StyledNav>
     </StyledHeader>
   );
 }
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #9f8772;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #665a48;
+  }
+`;
 
 const StyledHeader = styled.header`
   display: flex;
@@ -30,15 +34,6 @@ const StyledHeader = styled.header`
 const StyledNav = styled.nav`
   display: flex;
   gap: 2rem;
-`;
-const StyledAnchor = styled.a`
-  text-decoration: none;
-  color: #9f8772;
-  text-transform: uppercase;
-
-  &:hover {
-    color: #665a48;
-  }
 `;
 
 export default Header;
